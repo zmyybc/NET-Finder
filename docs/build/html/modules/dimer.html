@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dimer &mdash; NET-Finder 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ReactionPath" href="reaction_path.html" />
+    <link rel="prev" title="Usage" href="../usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            NET-Finder
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dimer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#key-features">Key Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-usage">Advanced Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reaction_path.html">ReactionPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transition_state_search.html">TransitionStateSearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reaction_network.html">ReactionNetwork</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NET-Finder</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Dimer</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/dimer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dimer">
+<h1>Dimer<a class="headerlink" href="#dimer" title="Permalink to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>The <cite>Dimer</cite> class is a core component of NET-Finder, responsible for performing transition state searches using the dimer method. This method is an efficient algorithm for finding saddle points on potential energy surfaces without requiring an initial guess for the transition state geometry.</p>
+</section>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Implements the dimer method for transition state search</p></li>
+<li><p>Supports various displacement methods for initial dimer orientation</p></li>
+<li><p>Allows for customization of dimer parameters</p></li>
+<li><p>Performs reaction path optimization from identified transition states</p></li>
+</ul>
+</section>
+<section id="basic-usage">
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading"></a></h2>
+<p>Here’s a basic example of how to use the <cite>Dimer</cite> class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
+<span class="kn">from</span> <span class="nn">ase.calculators.emt</span> <span class="kn">import</span> <span class="n">EMT</span>
+<span class="kn">from</span> <span class="nn">net_finder.search</span> <span class="kn">import</span> <span class="n">Dimer</span>
+
+<span class="c1"># Load initial structure</span>
+<span class="n">atoms</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;initial_structure.vasp&#39;</span><span class="p">)</span>
+
+<span class="c1"># Set up calculator</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="n">EMT</span><span class="p">()</span>
+
+<span class="c1"># Set up dimer parameters</span>
+<span class="n">dimer_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;displacement_method&#39;</span><span class="p">:</span> <span class="s1">&#39;gauss&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;displacement_radius&#39;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
+    <span class="s1">&#39;dimer_separation&#39;</span><span class="p">:</span> <span class="mf">0.01</span>
+<span class="p">}</span>
+
+<span class="c1"># Create Dimer instance</span>
+<span class="n">dimer</span> <span class="o">=</span> <span class="n">Dimer</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">calc</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;dimer_output&#39;</span><span class="p">,</span> <span class="n">dimer_params</span><span class="o">=</span><span class="n">dimer_params</span><span class="p">)</span>
+
+<span class="c1"># Run dimer method</span>
+<span class="n">reaction_path</span> <span class="o">=</span> <span class="n">dimer</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><cite>atoms</cite> (ase.Atoms): The initial atomic structure.</p></li>
+<li><p><cite>calc</cite> (ase.calculators.Calculator): The ASE calculator to use for energy and force calculations.</p></li>
+<li><p><cite>output_dir</cite> (str): Directory to store output files.</p></li>
+<li><p><cite>dimer_params</cite> (dict): Dictionary of dimer method parameters.</p>
+<ul>
+<li><p><cite>displacement_method</cite> (str): Method for initial displacement (‘gauss’, ‘random’, etc.).</p></li>
+<li><p><cite>displacement_radius</cite> (float): Radius for the initial displacement.</p></li>
+<li><p><cite>dimer_separation</cite> (float): Separation distance between dimer images.</p></li>
+<li><p><cite>fix_index</cite> (int, optional): Fix atoms with index less than this value.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading"></a></h2>
+<p>This method performs the dimer search and returns a <cite>ReactionPath</cite> object.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><cite>fmax</cite> (float): Maximum force criterion for optimization.</p></li>
+<li><p><cite>steps</cite> (int): Maximum number of optimization steps.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p><cite>ReactionPath</cite>: Object containing the optimized reaction path.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="advanced-usage">
+<h2>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this heading"></a></h2>
+<p>For more advanced usage, you can customize the dimer parameters to suit your specific system:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dimer_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;displacement_method&#39;</span><span class="p">:</span> <span class="s1">&#39;random&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;displacement_radius&#39;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+    <span class="s1">&#39;dimer_separation&#39;</span><span class="p">:</span> <span class="mf">0.005</span><span class="p">,</span>
+    <span class="s1">&#39;fix_index&#39;</span><span class="p">:</span> <span class="mi">10</span>  <span class="c1"># Fix the first 10 atoms</span>
+<span class="p">}</span>
+
+<span class="n">dimer</span> <span class="o">=</span> <span class="n">Dimer</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">calc</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;custom_dimer_output&#39;</span><span class="p">,</span> <span class="n">dimer_params</span><span class="o">=</span><span class="n">dimer_params</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also access intermediate results and trajectories from the <cite>Dimer</cite> instance after running:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reaction_path</span> <span class="o">=</span> <span class="n">dimer</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Access transition state structure</span>
+<span class="n">ts_structure</span> <span class="o">=</span> <span class="n">reaction_path</span><span class="o">.</span><span class="n">transition_state</span>
+
+<span class="c1"># Access reaction path energies</span>
+<span class="n">energies</span> <span class="o">=</span> <span class="n">reaction_path</span><span class="o">.</span><span class="n">energies</span>
+
+<span class="c1"># Access full trajectory</span>
+<span class="n">trajectory</span> <span class="o">=</span> <span class="n">dimer</span><span class="o">.</span><span class="n">get_trajectory</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>The dimer method can be sensitive to initial conditions. If you’re not finding the desired transition state, try adjusting the <cite>displacement_radius</cite> or using a different <cite>displacement_method</cite>.</p></li>
+<li><p>For systems with rigid parts (e.g., a surface), use the <cite>fix_index</cite> parameter to keep part of the structure fixed during the search.</p></li>
+<li><p>The <cite>run</cite> method can be computationally intensive for large systems or accurate calculators. Consider using parallel computing resources when available.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="reaction_path.html" class="btn btn-neutral float-right" title="ReactionPath" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ybc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

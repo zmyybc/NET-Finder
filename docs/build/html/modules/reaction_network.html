@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReactionNetwork &mdash; NET-Finder 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="TransitionStateSearch" href="transition_state_search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            NET-Finder
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dimer.html">Dimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reaction_path.html">ReactionPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transition_state_search.html">TransitionStateSearch</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ReactionNetwork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#key-features">Key Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-usage">Advanced Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visualization">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integration-with-other-modules">Integration with Other Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NET-Finder</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ReactionNetwork</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/reaction_network.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="reactionnetwork">
+<h1>ReactionNetwork<a class="headerlink" href="#reactionnetwork" title="Permalink to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>The <cite>ReactionNetwork</cite> class is a crucial component in NET-Finder that constructs and analyzes reaction networks based on the collected reaction paths. It provides methods for network visualization, path analysis, and identification of key reaction routes.</p>
+</section>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Constructs a reaction network from a set of reaction paths</p></li>
+<li><p>Filters reaction paths based on energy criteria</p></li>
+<li><p>Generates network graphs for visualization</p></li>
+<li><p>Provides methods for analyzing network properties and finding important paths</p></li>
+<li><p>Supports export of network data for further analysis</p></li>
+</ul>
+</section>
+<section id="basic-usage">
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading"></a></h2>
+<p>Here’s a basic example of how to use the <cite>ReactionNetwork</cite> class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">net_finder.net</span> <span class="kn">import</span> <span class="n">ReactionNetwork</span>
+<span class="kn">from</span> <span class="nn">net_finder.path</span> <span class="kn">import</span> <span class="n">ReactionPath</span>
+
+<span class="c1"># Assume we have a list of ReactionPath objects</span>
+<span class="n">reaction_paths</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>  <span class="c1"># List of ReactionPath objects</span>
+
+<span class="c1"># Create ReactionNetwork instance</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">ReactionNetwork</span><span class="p">(</span><span class="n">reaction_paths</span><span class="p">,</span> <span class="n">energy_cutoff</span><span class="o">=-</span><span class="mf">22.5</span><span class="p">)</span>
+
+<span class="c1"># Generate and save the network graph</span>
+<span class="n">network</span><span class="o">.</span><span class="n">generate_graph</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;reaction_network_output&#39;</span><span class="p">)</span>
+
+<span class="c1"># Analyze the network</span>
+<span class="n">unique_species</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">get_unique_species</span><span class="p">()</span>
+<span class="n">lowest_energy_path</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">get_lowest_energy_path</span><span class="p">(</span><span class="n">start_species</span><span class="p">,</span> <span class="n">end_species</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><cite>reaction_paths</cite> (list of ReactionPath): List of reaction paths to construct the network.</p></li>
+<li><p><cite>energy_cutoff</cite> (float, optional): Maximum energy threshold for including reactions.</p></li>
+<li><p><cite>structure_diff_threshold</cite> (float, optional): Threshold for considering structures as similar (default: 0.1).</p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading"></a></h2>
+<p>Generates and saves the reaction network graph.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><cite>output_dir</cite> (str): Directory to save the generated graph and related files.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns a list of unique species (structures) in the network.</p>
+<p>Returns all reaction paths in the network.</p>
+<p>Finds the lowest energy path between two species.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><cite>start_species</cite> (ase.Atoms): Starting species structure.</p></li>
+<li><p><cite>end_species</cite> (ase.Atoms): End species structure.</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>List of ReactionPath objects representing the lowest energy path.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="advanced-usage">
+<h2>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this heading"></a></h2>
+<p>For more advanced analysis of the reaction network:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find all paths between two species</span>
+<span class="n">all_paths</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">find_all_paths</span><span class="p">(</span><span class="n">start_species</span><span class="p">,</span> <span class="n">end_species</span><span class="p">)</span>
+
+<span class="c1"># Identify rate-limiting steps</span>
+<span class="n">rate_limiting_steps</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">identify_rate_limiting_steps</span><span class="p">()</span>
+
+<span class="c1"># Calculate network properties</span>
+<span class="n">connectivity</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">calculate_connectivity</span><span class="p">()</span>
+<span class="n">centrality</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">calculate_centrality</span><span class="p">()</span>
+
+<span class="c1"># Export network data for external analysis</span>
+<span class="n">network</span><span class="o">.</span><span class="n">export_to_graphml</span><span class="p">(</span><span class="s1">&#39;network.graphml&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="visualization">
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this heading"></a></h2>
+<p>The <cite>generate_graph</cite> method creates a visual representation of the reaction network:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">generate_graph</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;network_visualization&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This generates:
+- A PNG file of the network graph
+- Individual structure files for each unique species
+- A detailed log of the network generation process</p>
+<p>You can customize the appearance of the graph:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">generate_graph</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;custom_network&#39;</span><span class="p">,</span>
+                       <span class="n">node_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                       <span class="n">edge_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                       <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="integration-with-other-modules">
+<h2>Integration with Other Modules<a class="headerlink" href="#integration-with-other-modules" title="Permalink to this heading"></a></h2>
+<p>The ReactionNetwork class is typically used as the final step in a NET-Finder workflow:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">net_finder.paths</span> <span class="kn">import</span> <span class="n">TransitionStateSearch</span>
+
+<span class="c1"># Run transition state searches</span>
+<span class="n">ts_search</span> <span class="o">=</span> <span class="n">TransitionStateSearch</span><span class="p">(</span><span class="n">initial_structures</span><span class="p">,</span> <span class="n">calc</span><span class="p">,</span> <span class="n">dimer_params</span><span class="p">)</span>
+<span class="n">ts_search</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="c1"># Collect reaction paths</span>
+<span class="n">reaction_paths</span> <span class="o">=</span> <span class="n">ts_search</span><span class="o">.</span><span class="n">collect_reaction_paths</span><span class="p">()</span>
+
+<span class="c1"># Create and analyze the reaction network</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">ReactionNetwork</span><span class="p">(</span><span class="n">reaction_paths</span><span class="p">,</span> <span class="n">energy_cutoff</span><span class="o">=-</span><span class="mf">22.5</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">generate_graph</span><span class="p">()</span>
+
+<span class="c1"># Perform further analysis</span>
+<span class="n">key_intermediates</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">identify_key_intermediates</span><span class="p">()</span>
+<span class="n">dominant_pathways</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">find_dominant_pathways</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>The energy cutoff parameter can significantly affect the complexity of the resulting network. Adjust it carefully to balance between completeness and manageability.</p></li>
+<li><p>For large networks, graph generation and some analysis methods may be computationally intensive. Consider using sampling or filtering techniques for very large datasets.</p></li>
+<li><p>The structure comparison used to identify unique species is based on RMSD. Adjust the <cite>structure_diff_threshold</cite> if needed for your specific system.</p></li>
+<li><p>While the generated graph provides a good overview, consider using specialized network analysis tools for more advanced analyses of large or complex networks.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="transition_state_search.html" class="btn btn-neutral float-left" title="TransitionStateSearch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ybc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

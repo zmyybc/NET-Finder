@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usage &mdash; NET-Finder 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Dimer" href="modules/dimer.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            NET-Finder
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prepare-your-input-structures">1. Prepare Your Input Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-configuration-file">2. Create a Configuration File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-net-finder">3. Run NET-Finder</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-usage">Advanced Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#customizing-dimer-parameters">Customizing Dimer Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-different-calculators">Using Different Calculators</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#analyzing-results">Analyzing Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#visualizing-the-network">Visualizing the Network</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/dimer.html">Dimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/reaction_path.html">ReactionPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/transition_state_search.html">TransitionStateSearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/reaction_network.html">ReactionNetwork</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NET-Finder</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Usage</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/usage.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h1>
+<p>This guide provides instructions on how to use NET-Finder for your reaction network exploration tasks. We’ll cover basic usage, configuration, and some advanced features.</p>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this heading"></a></h2>
+<p>To quickly familiarize yourself with NET-Finder, you can use the provided <cite>main.py</cite> script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>main.py
+</pre></div>
+</div>
+<p>This will run a simple example using default parameters.</p>
+</section>
+<section id="basic-usage">
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading"></a></h2>
+<section id="prepare-your-input-structures">
+<h3>1. Prepare Your Input Structures<a class="headerlink" href="#prepare-your-input-structures" title="Permalink to this heading"></a></h3>
+<p>Prepare your initial structures in VASP format (.vasp files) and place them in an <cite>initial</cite> directory.</p>
+</section>
+<section id="create-a-configuration-file">
+<h3>2. Create a Configuration File<a class="headerlink" href="#create-a-configuration-file" title="Permalink to this heading"></a></h3>
+<p>Create a configuration file (e.g., <cite>config.json</cite>) with your desired parameters:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;calculator_imports&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;from ase.calculators.vasp import Vasp&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;calculator_setup&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;calc = Vasp(xc=&#39;pbe&#39;, encut=400, icharg=1, ncore=32, kpts=(1, 1, 1), ismear=0, sigma=0.01, isym=0, ispin=2, nupdown=4, algo=&#39;fast&#39;, gamma=True, nsw=0, lwave=True, lcharg=True, nelm=200, ediff=0.0001)&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dimer_params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;displacement_method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gauss&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;displacement_radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;dimer_separation&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;slurm_params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;nodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your_account&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ntasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12:00:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;partition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;shared&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="run-net-finder">
+<h3>3. Run NET-Finder<a class="headerlink" href="#run-net-finder" title="Permalink to this heading"></a></h3>
+<p>Create a Python script to run NET-Finder:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
+<span class="kn">from</span> <span class="nn">net_finder.paths</span> <span class="kn">import</span> <span class="n">TransitionStateSearch</span>
+<span class="kn">from</span> <span class="nn">net_finder.net</span> <span class="kn">import</span> <span class="n">ReactionNetwork</span>
+
+<span class="c1"># Load initial structures</span>
+<span class="n">initial_structures</span> <span class="o">=</span> <span class="p">[</span><span class="n">read</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;initial/structure_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.vasp&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+
+<span class="c1"># Set up calculator and parameters</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;calculator_imports&quot;</span><span class="p">:</span> <span class="s2">&quot;from ase.calculators.vasp import Vasp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calculator_setup&quot;</span><span class="p">:</span> <span class="s2">&quot;calc = Vasp(xc=&#39;pbe&#39;, encut=400, icharg=1, ncore=32, kpts=(1, 1, 1), ismear=0, sigma=0.01, isym=0, ispin=2, nupdown=4, algo=&#39;fast&#39;, gamma=True, nsw=0, lwave=True, lcharg=True, nelm=200, ediff=0.0001)&quot;</span>
+<span class="p">}</span>
+
+<span class="n">dimer_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;displacement_method&#39;</span><span class="p">:</span> <span class="s1">&#39;gauss&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;displacement_radius&#39;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
+    <span class="s1">&#39;dimer_separation&#39;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">slurm_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;nodes&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;account&#39;</span><span class="p">:</span> <span class="s1">&#39;your_account&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ntasks&#39;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+    <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="s1">&#39;12:00:00&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;partition&#39;</span><span class="p">:</span> <span class="s1">&#39;shared&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># Run transition state search</span>
+<span class="n">ts_search</span> <span class="o">=</span> <span class="n">TransitionStateSearch</span><span class="p">(</span><span class="n">initial_structures</span><span class="p">,</span> <span class="n">calc</span><span class="p">,</span> <span class="n">dimer_params</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;ts_search_output&#39;</span><span class="p">,</span> <span class="n">run_mode</span><span class="o">=</span><span class="s1">&#39;slurm&#39;</span><span class="p">,</span> <span class="n">slurm_params</span><span class="o">=</span><span class="n">slurm_params</span><span class="p">)</span>
+<span class="n">ts_search</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Collect reaction paths and generate network</span>
+<span class="n">reaction_paths</span> <span class="o">=</span> <span class="n">ts_search</span><span class="o">.</span><span class="n">collect_reaction_paths</span><span class="p">()</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">ReactionNetwork</span><span class="p">(</span><span class="n">reaction_paths</span><span class="p">,</span> <span class="n">energy_cutoff</span><span class="o">=-</span><span class="mf">22.5</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">generate_graph</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;reaction_network_output&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Run this script to start the NET-Finder calculation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>run_net_finder.py
+</pre></div>
+</div>
+</section>
+</section>
+<section id="advanced-usage">
+<h2>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this heading"></a></h2>
+<section id="customizing-dimer-parameters">
+<h3>Customizing Dimer Parameters<a class="headerlink" href="#customizing-dimer-parameters" title="Permalink to this heading"></a></h3>
+<p>You can customize the dimer method parameters to fine-tune the transition state search:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dimer_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;displacement_method&#39;</span><span class="p">:</span> <span class="s1">&#39;gauss&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;displacement_radius&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span>
+    <span class="s1">&#39;dimer_separation&#39;</span><span class="p">:</span> <span class="mf">0.005</span><span class="p">,</span>
+    <span class="s1">&#39;fix_index&#39;</span><span class="p">:</span> <span class="mi">10</span>  <span class="c1"># Fix atoms with index less than 10</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="using-different-calculators">
+<h3>Using Different Calculators<a class="headerlink" href="#using-different-calculators" title="Permalink to this heading"></a></h3>
+<p>NET-Finder supports various ASE calculators. Here’s an example using EMT:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.calculators.emt</span> <span class="kn">import</span> <span class="n">EMT</span>
+
+<span class="n">calc</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;calculator_imports&quot;</span><span class="p">:</span> <span class="s2">&quot;from ase.calculators.emt import EMT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calculator_setup&quot;</span><span class="p">:</span> <span class="s2">&quot;calc = EMT()&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="analyzing-results">
+<h2>Analyzing Results<a class="headerlink" href="#analyzing-results" title="Permalink to this heading"></a></h2>
+<p>After running NET-Finder, you can analyze the results:</p>
+<ol class="arabic">
+<li><p>Check the <cite>ts_search_output</cite> directory for individual transition state searches.</p></li>
+<li><p>Examine the <cite>reaction_network_output</cite> directory for the generated reaction network graph and related files.</p></li>
+<li><p>Use the <cite>ReactionNetwork</cite> class methods to further analyze the network:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get all unique species in the network</span>
+<span class="n">unique_species</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">get_unique_species</span><span class="p">()</span>
+
+<span class="c1"># Get all reaction paths</span>
+<span class="n">all_paths</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">get_reaction_paths</span><span class="p">()</span>
+
+<span class="c1"># Get the lowest energy path between two species</span>
+<span class="n">lowest_path</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">get_lowest_energy_path</span><span class="p">(</span><span class="n">start_species</span><span class="p">,</span> <span class="n">end_species</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<section id="visualizing-the-network">
+<h3>Visualizing the Network<a class="headerlink" href="#visualizing-the-network" title="Permalink to this heading"></a></h3>
+<p>NET-Finder generates a network graph in the <cite>reaction_network_output</cite> directory. You can visualize this graph using various tools:</p>
+<ol class="arabic">
+<li><p>Open the generated PNG file directly.</p></li>
+<li><p>Use network visualization libraries like NetworkX with matplotlib for more advanced visualizations:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">graph</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h2>
+<p>If you encounter issues while using NET-Finder:</p>
+<ol class="arabic simple">
+<li><p>Check the log files in the output directories for error messages.</p></li>
+<li><p>Verify that your input structures are correctly formatted.</p></li>
+<li><p>Ensure that the calculator is properly set up and all required files (e.g., POTCAR for VASP) are present.</p></li>
+<li><p>If using SLURM, check the SLURM output files for any job-related issues.</p></li>
+</ol>
+<p>For persistent problems, please open an issue on the NET-Finder GitHub repository with a detailed description of the problem and relevant log files.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modules/dimer.html" class="btn btn-neutral float-right" title="Dimer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ybc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

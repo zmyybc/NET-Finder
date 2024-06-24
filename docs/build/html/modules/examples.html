@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examples &mdash; NET-Finder 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            NET-Finder
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dimer.html">Dimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reaction_path.html">ReactionPath</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transition_state_search.html">TransitionStateSearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reaction_network.html">ReactionNetwork</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NET-Finder</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Examples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/examples.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h1>
+<p>This section provides comprehensive examples of using NET-Finder for various reaction network exploration tasks. These examples demonstrate how to set up and run calculations, analyze results, and interpret the output.</p>
+<section id="basic-reaction-network-exploration">
+<h2>Basic Reaction Network Exploration<a class="headerlink" href="#basic-reaction-network-exploration" title="Permalink to this heading"></a></h2>
+<p>This example shows how to set up a basic reaction network exploration for a simple system.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">molecule</span>
+<span class="kn">from</span> <span class="nn">ase.calculators.emt</span> <span class="kn">import</span> <span class="n">EMT</span>
+<span class="kn">from</span> <span class="nn">net_finder.paths</span> <span class="kn">import</span> <span class="n">TransitionStateSearch</span>
+<span class="kn">from</span> <span class="nn">net_finder.net</span> <span class="kn">import</span> <span class="n">ReactionNetwork</span>
+
+<span class="c1"># Create initial structures</span>
+<span class="n">initial_structures</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;H2O&#39;</span><span class="p">),</span>
+    <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;H2&#39;</span><span class="p">),</span>
+    <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;O2&#39;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Set up calculator</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;calculator_imports&quot;</span><span class="p">:</span> <span class="s2">&quot;from ase.calculators.emt import EMT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calculator_setup&quot;</span><span class="p">:</span> <span class="s2">&quot;calc = EMT()&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Set up dimer parameters</span>
+<span class="n">dimer_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;displacement_method&#39;</span><span class="p">:</span> <span class="s1">&#39;gauss&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;displacement_radius&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="s1">&#39;dimer_separation&#39;</span><span class="p">:</span> <span class="mf">0.01</span>
+<span class="p">}</span>
+
+<span class="c1"># Create TransitionStateSearch instance</span>
+<span class="n">ts_search</span> <span class="o">=</span> <span class="n">TransitionStateSearch</span><span class="p">(</span><span class="n">initial_structures</span><span class="p">,</span> <span class="n">calc</span><span class="p">,</span> <span class="n">dimer_params</span><span class="p">,</span>
+                                  <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;water_formation&#39;</span><span class="p">,</span> <span class="n">run_mode</span><span class="o">=</span><span class="s1">&#39;local&#39;</span><span class="p">)</span>
+
+<span class="c1"># Run transition state searches</span>
+<span class="n">ts_search</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Collect reaction paths</span>
+<span class="n">reaction_paths</span> <span class="o">=</span> <span class="n">ts_search</span><span class="o">.</span><span class="n">collect_reaction_paths</span><span class="p">()</span>
+
+<span class="c1"># Create and analyze reaction network</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">ReactionNetwork</span><span class="p">(</span><span class="n">reaction_paths</span><span class="p">,</span> <span class="n">energy_cutoff</span><span class="o">=-</span><span class="mf">5.0</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">generate_graph</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;water_formation_network&#39;</span><span class="p">)</span>
+
+<span class="c1"># Analyze results</span>
+<span class="n">unique_species</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">get_unique_species</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of unique species: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_species</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">species</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">unique_species</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Species </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">species</span><span class="o">.</span><span class="n">get_chemical_formula</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Find lowest energy path between H2 + O2 and H2O</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;H2&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;O2&#39;</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;H2O&#39;</span><span class="p">)</span>
+<span class="n">lowest_path</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">get_lowest_energy_path</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">lowest_path</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lowest energy path:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="n">lowest_path</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">step</span><span class="o">.</span><span class="n">reactant</span><span class="o">.</span><span class="n">get_chemical_formula</span><span class="p">()</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">step</span><span class="o">.</span><span class="n">product</span><span class="o">.</span><span class="n">get_chemical_formula</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Activation energy: </span><span class="si">{</span><span class="n">step</span><span class="o">.</span><span class="n">activation_energy</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No path found between specified species.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="surface-reaction-network">
+<h2>Surface Reaction Network<a class="headerlink" href="#surface-reaction-network" title="Permalink to this heading"></a></h2>
+<p>This example demonstrates how to explore a reaction network on a catalyst surface.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">fcc111</span><span class="p">,</span> <span class="n">add_adsorbate</span>
+<span class="kn">from</span> <span class="nn">ase.calculators.vasp</span> <span class="kn">import</span> <span class="n">Vasp</span>
+<span class="kn">from</span> <span class="nn">net_finder.paths</span> <span class="kn">import</span> <span class="n">TransitionStateSearch</span>
+<span class="kn">from</span> <span class="nn">net_finder.net</span> <span class="kn">import</span> <span class="n">ReactionNetwork</span>
+
+<span class="c1"># Create initial structures</span>
+<span class="n">slab</span> <span class="o">=</span> <span class="n">fcc111</span><span class="p">(</span><span class="s1">&#39;Pt&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">vacuum</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+
+<span class="n">structures</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># CO adsorbed</span>
+<span class="n">co_ads</span> <span class="o">=</span> <span class="n">slab</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">add_adsorbate</span><span class="p">(</span><span class="n">co_ads</span><span class="p">,</span> <span class="s1">&#39;CO&#39;</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s1">&#39;ontop&#39;</span><span class="p">)</span>
+<span class="n">structures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">co_ads</span><span class="p">)</span>
+
+<span class="c1"># O adsorbed</span>
+<span class="n">o_ads</span> <span class="o">=</span> <span class="n">slab</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">add_adsorbate</span><span class="p">(</span><span class="n">o_ads</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="s1">&#39;fcc&#39;</span><span class="p">)</span>
+<span class="n">structures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">o_ads</span><span class="p">)</span>
+
+<span class="c1"># CO and O co-adsorbed</span>
+<span class="n">co_o_ads</span> <span class="o">=</span> <span class="n">slab</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">add_adsorbate</span><span class="p">(</span><span class="n">co_o_ads</span><span class="p">,</span> <span class="s1">&#39;CO&#39;</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s1">&#39;ontop&#39;</span><span class="p">)</span>
+<span class="n">add_adsorbate</span><span class="p">(</span><span class="n">co_o_ads</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="s1">&#39;fcc&#39;</span><span class="p">)</span>
+<span class="n">structures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">co_o_ads</span><span class="p">)</span>
+
+<span class="c1"># Set up VASP calculator</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;calculator_imports&quot;</span><span class="p">:</span> <span class="s2">&quot;from ase.calculators.vasp import Vasp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calculator_setup&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;calc = Vasp(xc=&#39;PBE&#39;, encut=400, kpts=(3,3,1),</span>
+<span class="s2">                           ismear=0, sigma=0.1, ibrion=-1, nsw=0,</span>
+<span class="s2">                           ldau=True, ldautype=2, ldauu={&#39;Pt&#39;:2}, ldaul={&#39;Pt&#39;:2},</span>
+<span class="s2">                           luse_vdw=True, aggac=0.0)&quot;&quot;&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Set up dimer parameters</span>
+<span class="n">dimer_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;displacement_method&#39;</span><span class="p">:</span> <span class="s1">&#39;gauss&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;displacement_radius&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="s1">&#39;dimer_separation&#39;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+    <span class="s1">&#39;fix_index&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">slab</span><span class="p">)</span>  <span class="c1"># Fix slab atoms</span>
+<span class="p">}</span>
+
+<span class="c1"># Create TransitionStateSearch instance</span>
+<span class="n">ts_search</span> <span class="o">=</span> <span class="n">TransitionStateSearch</span><span class="p">(</span><span class="n">structures</span><span class="p">,</span> <span class="n">calc</span><span class="p">,</span> <span class="n">dimer_params</span><span class="p">,</span>
+                                  <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;co_oxidation&#39;</span><span class="p">,</span> <span class="n">run_mode</span><span class="o">=</span><span class="s1">&#39;slurm&#39;</span><span class="p">,</span>
+                                  <span class="n">slurm_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;nodes&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ntasks&#39;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="s1">&#39;24:00:00&#39;</span><span class="p">})</span>
+
+<span class="c1"># Run transition state searches</span>
+<span class="n">ts_search</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="c1"># Collect reaction paths</span>
+<span class="n">reaction_paths</span> <span class="o">=</span> <span class="n">ts_search</span><span class="o">.</span><span class="n">collect_reaction_paths</span><span class="p">()</span>
+
+<span class="c1"># Create and analyze reaction network</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">ReactionNetwork</span><span class="p">(</span><span class="n">reaction_paths</span><span class="p">,</span> <span class="n">energy_cutoff</span><span class="o">=-</span><span class="mf">7.0</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">generate_graph</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;co_oxidation_network&#39;</span><span class="p">)</span>
+
+<span class="c1"># Analyze results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unique intermediates:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">get_unique_species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">species</span><span class="o">.</span><span class="n">get_chemical_formula</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;metal&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Find all paths for CO oxidation</span>
+<span class="n">co_o_start</span> <span class="o">=</span> <span class="n">co_o_ads</span>
+<span class="n">co2_end</span> <span class="o">=</span> <span class="n">slab</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">add_adsorbate</span><span class="p">(</span><span class="n">co2_end</span><span class="p">,</span> <span class="s1">&#39;CO2&#39;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="s1">&#39;ontop&#39;</span><span class="p">)</span>
+
+<span class="n">all_paths</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">find_all_paths</span><span class="p">(</span><span class="n">co_o_start</span><span class="p">,</span> <span class="n">co2_end</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_paths</span><span class="p">)</span><span class="si">}</span><span class="s2"> paths for CO oxidation&quot;</span><span class="p">)</span>
+
+<span class="c1"># Print details of the shortest path</span>
+<span class="k">if</span> <span class="n">all_paths</span><span class="p">:</span>
+    <span class="n">shortest_path</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">all_paths</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Shortest path for CO oxidation:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="n">shortest_path</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">step</span><span class="o">.</span><span class="n">reactant</span><span class="o">.</span><span class="n">get_chemical_formula</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;metal&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> -&gt; &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">step</span><span class="o">.</span><span class="n">product</span><span class="o">.</span><span class="n">get_chemical_formula</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;metal&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Activation energy: </span><span class="si">{</span><span class="n">step</span><span class="o">.</span><span class="n">activation_energy</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No paths found for CO oxidation&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="notes-on-examples">
+<h2>Notes on Examples<a class="headerlink" href="#notes-on-examples" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>The first example uses the EMT calculator for demonstration purposes. For real systems, more accurate calculators like VASP, GPAW, or Quantum ESPRESSO should be used.</p></li>
+<li><p>The surface reaction example uses VASP and includes some advanced settings like U-J corrections and van der Waals interactions. Adjust these settings according to your specific system and computational resources.</p></li>
+<li><p>When using SLURM for job submission, make sure to adjust the SLURM parameters according to your cluster’s configuration and the computational demands of your system.</p></li>
+<li><p>The energy cutoff values used in these examples (-5.0 eV and -7.0 eV) are arbitrary. You should choose appropriate values based on the energy scale of your specific system.</p></li>
+<li><p>These examples demonstrate basic usage. For more complex systems or detailed analyses, you may need to use additional features of NET-Finder or combine it with other computational tools.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ybc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

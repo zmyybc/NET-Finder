@@ -1,0 +1,108 @@
+Installation
+============
+
+This guide will walk you through the process of installing NET-Finder and its dependencies.
+
+System Requirements
+-------------------
+
+Before installing NET-Finder, ensure that your system meets the following requirements:
+
+- Operating System: Linux, macOS, or Windows with WSL (Windows Subsystem for Linux)
+- Python: version 3.8 or higher
+- Git: for cloning the repository
+
+Dependencies
+------------
+
+NET-Finder requires the following Python packages:
+
+- ASE (Atomic Simulation Environment)
+- matplotlib
+- scipy
+- numpy
+
+These will be installed automatically during the NET-Finder installation process.
+
+Installation Steps
+------------------
+
+1. Clone the NET-Finder repository:
+
+   .. code-block:: bash
+
+      git clone https://github.com/your-repo/NET-Finder.git
+      cd NET-Finder
+
+2. (Optional) Create and activate a virtual environment:
+
+   .. code-block:: bash
+
+      python -m venv net-finder-env
+      source net-finder-env/bin/activate  # On Windows, use `net-finder-env\Scripts\activate`
+
+3. Install NET-Finder and its dependencies:
+
+   .. code-block:: bash
+
+      pip install -e .
+
+   This command installs NET-Finder in editable mode, allowing you to modify the source code if needed.
+
+4. Verify the installation:
+
+   .. code-block:: bash
+
+      python -c "import net_finder; print(net_finder.__version__)"
+
+   This should print the version number of NET-Finder.
+
+5. Add NET-Finder to your Python path:
+
+   .. code-block:: bash
+
+      export PYTHONPATH=/path/to/your/NET-Finder:$PYTHONPATH
+
+   You may want to add this line to your shell configuration file (e.g., `.bashrc` or `.bash_profile`) to make it permanent.
+
+Installing Optional Dependencies
+--------------------------------
+
+Depending on your specific use case, you might need to install additional packages:
+
+- For VASP calculations:
+
+  .. code-block:: bash
+
+     pip install ase-vasp
+
+- For visualization:
+
+  .. code-block:: bash
+
+     pip install ase-gui
+
+Troubleshooting
+---------------
+
+If you encounter any issues during installation, please check the following:
+
+1. Ensure that you have the latest version of pip:
+
+   .. code-block:: bash
+
+      pip install --upgrade pip
+
+2. If you're having issues with a specific dependency, try installing it separately:
+
+   .. code-block:: bash
+
+      pip install ase matplotlib scipy numpy
+
+3. Check that your system's Python version meets the requirements:
+
+   .. code-block:: bash
+
+      python --version
+
+If you continue to experience problems, please open an issue on the NET-Finder GitHub repository with details about the error and your system configuration.

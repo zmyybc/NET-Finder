@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TransitionStateSearch &mdash; NET-Finder 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ReactionNetwork" href="reaction_network.html" />
+    <link rel="prev" title="ReactionPath" href="reaction_path.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            NET-Finder
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dimer.html">Dimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reaction_path.html">ReactionPath</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TransitionStateSearch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#key-features">Key Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-usage">Advanced Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integration-with-other-modules">Integration with Other Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reaction_network.html">ReactionNetwork</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NET-Finder</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">TransitionStateSearch</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/transition_state_search.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="transitionstatesearch">
+<h1>TransitionStateSearch<a class="headerlink" href="#transitionstatesearch" title="Permalink to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>The <cite>TransitionStateSearch</cite> class is a high-level component in NET-Finder that manages multiple transition state searches. It coordinates the execution of Dimer searches, handles job submission (locally or on a cluster), and collects results.</p>
+</section>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Manages multiple transition state searches from different initial structures</p></li>
+<li><p>Supports both local execution and job submission to computing clusters (e.g., using SLURM)</p></li>
+<li><p>Provides methods for collecting and analyzing reaction paths from completed searches</p></li>
+<li><p>Allows customization of search parameters and computational resources</p></li>
+</ul>
+</section>
+<section id="basic-usage">
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading"></a></h2>
+<p>Here’s a basic example of how to use the <cite>TransitionStateSearch</cite> class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
+<span class="kn">from</span> <span class="nn">net_finder.paths</span> <span class="kn">import</span> <span class="n">TransitionStateSearch</span>
+
+<span class="c1"># Load initial structures</span>
+<span class="n">initial_structures</span> <span class="o">=</span> <span class="p">[</span><span class="n">read</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;initial/structure_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.vasp&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+
+<span class="c1"># Set up calculator configuration</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;calculator_imports&quot;</span><span class="p">:</span> <span class="s2">&quot;from ase.calculators.vasp import Vasp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calculator_setup&quot;</span><span class="p">:</span> <span class="s2">&quot;calc = Vasp(xc=&#39;pbe&#39;, encut=400, kpts=(1, 1, 1))&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Set up dimer parameters</span>
+<span class="n">dimer_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;displacement_method&#39;</span><span class="p">:</span> <span class="s1">&#39;gauss&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;displacement_radius&#39;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
+    <span class="s1">&#39;dimer_separation&#39;</span><span class="p">:</span> <span class="mf">0.01</span>
+<span class="p">}</span>
+
+<span class="c1"># Create TransitionStateSearch instance</span>
+<span class="n">ts_search</span> <span class="o">=</span> <span class="n">TransitionStateSearch</span><span class="p">(</span><span class="n">initial_structures</span><span class="p">,</span> <span class="n">calc</span><span class="p">,</span> <span class="n">dimer_params</span><span class="p">,</span>
+                                  <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;ts_search_output&#39;</span><span class="p">,</span> <span class="n">run_mode</span><span class="o">=</span><span class="s1">&#39;local&#39;</span><span class="p">)</span>
+
+<span class="c1"># Run transition state searches</span>
+<span class="n">ts_search</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Collect reaction paths</span>
+<span class="n">reaction_paths</span> <span class="o">=</span> <span class="n">ts_search</span><span class="o">.</span><span class="n">collect_reaction_paths</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><cite>initial_structures</cite> (list of ase.Atoms): List of initial structures for transition state searches.</p></li>
+<li><p><cite>calc</cite> (dict): Configuration for the calculator to be used in searches.</p></li>
+<li><p><cite>dimer_params</cite> (dict): Parameters for the Dimer method.</p></li>
+<li><p><cite>output_dir</cite> (str): Directory to store output files (default: ‘./ts_search’).</p></li>
+<li><p><cite>run_mode</cite> (str): Execution mode, either ‘local’ or ‘slurm’ (default: ‘local’).</p></li>
+<li><p><cite>trys</cite> (int): Number of attempts per initial structure (default: 10).</p></li>
+<li><p><cite>slurm_params</cite> (dict): Parameters for SLURM job submission (if run_mode is ‘slurm’).</p></li>
+</ul>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading"></a></h2>
+<p>This method initiates the transition state searches for all initial structures.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><cite>fmax</cite> (float): Maximum force criterion for optimization.</p></li>
+<li><p><cite>steps</cite> (int): Maximum number of optimization steps.</p></li>
+</ul>
+</dd>
+</dl>
+<p>This method collects and returns the reaction paths from completed searches.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>List of ReactionPath objects.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns the currently collected reaction paths.</p>
+<p>Saves the collected reaction paths to the specified directory.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p><cite>output_dir</cite> (str, optional): Directory to save the reaction paths. If not specified, uses the instance’s output_dir.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="advanced-usage">
+<h2>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this heading"></a></h2>
+<p>For more advanced usage, you can customize the search parameters and use cluster resources:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">slurm_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;nodes&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;ntasks&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+    <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="s1">&#39;12:00:00&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;partition&#39;</span><span class="p">:</span> <span class="s1">&#39;regular&#39;</span>
+<span class="p">}</span>
+
+<span class="n">ts_search</span> <span class="o">=</span> <span class="n">TransitionStateSearch</span><span class="p">(</span><span class="n">initial_structures</span><span class="p">,</span> <span class="n">calc</span><span class="p">,</span> <span class="n">dimer_params</span><span class="p">,</span>
+                                  <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;ts_search_output&#39;</span><span class="p">,</span> <span class="n">run_mode</span><span class="o">=</span><span class="s1">&#39;slurm&#39;</span><span class="p">,</span>
+                                  <span class="n">trys</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">slurm_params</span><span class="o">=</span><span class="n">slurm_params</span><span class="p">)</span>
+
+<span class="n">ts_search</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="c1"># Monitor job progress</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">ts_search</span><span class="o">.</span><span class="n">all_jobs_completed</span><span class="p">():</span>
+    <span class="n">ts_search</span><span class="o">.</span><span class="n">print_job_status</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>  <span class="c1"># Wait for 1 minute before checking again</span>
+
+<span class="n">reaction_paths</span> <span class="o">=</span> <span class="n">ts_search</span><span class="o">.</span><span class="n">collect_reaction_paths</span><span class="p">()</span>
+
+<span class="c1"># Save collected reaction paths</span>
+<span class="n">ts_search</span><span class="o">.</span><span class="n">save_reaction_paths</span><span class="p">(</span><span class="s1">&#39;final_paths&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="integration-with-other-modules">
+<h2>Integration with Other Modules<a class="headerlink" href="#integration-with-other-modules" title="Permalink to this heading"></a></h2>
+<p>The TransitionStateSearch class is typically used as part of a larger workflow in NET-Finder:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">net_finder.net</span> <span class="kn">import</span> <span class="n">ReactionNetwork</span>
+
+<span class="c1"># Run transition state searches</span>
+<span class="n">ts_search</span> <span class="o">=</span> <span class="n">TransitionStateSearch</span><span class="p">(</span><span class="n">initial_structures</span><span class="p">,</span> <span class="n">calc</span><span class="p">,</span> <span class="n">dimer_params</span><span class="p">)</span>
+<span class="n">ts_search</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="c1"># Collect reaction paths and create a reaction network</span>
+<span class="n">reaction_paths</span> <span class="o">=</span> <span class="n">ts_search</span><span class="o">.</span><span class="n">collect_reaction_paths</span><span class="p">()</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">ReactionNetwork</span><span class="p">(</span><span class="n">reaction_paths</span><span class="p">)</span>
+
+<span class="c1"># Analyze the network</span>
+<span class="n">network</span><span class="o">.</span><span class="n">generate_graph</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>When using the ‘slurm’ run mode, ensure that your environment is properly configured for SLURM job submission.</p></li>
+<li><p>The number of tries (<cite>trys</cite> parameter) can significantly affect the likelihood of finding transition states, but also increases computational cost.</p></li>
+<li><p>For large-scale searches, consider implementing a database backend for efficient storage and retrieval of reaction paths.</p></li>
+<li><p>Monitor resource usage and adjust <cite>slurm_params</cite> as needed to optimize performance on your specific cluster setup.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="reaction_path.html" class="btn btn-neutral float-left" title="ReactionPath" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="reaction_network.html" class="btn btn-neutral float-right" title="ReactionNetwork" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ybc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
