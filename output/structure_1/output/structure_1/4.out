@@ -1,0 +1,87 @@
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+      Step     Time          Energy          fmax
+BFGS:    0 05:53:05        5.988066        1.580434
+BFGS:    1 05:53:05        5.905294        1.244554
+BFGS:    2 05:53:05        5.808011        0.991094
+BFGS:    3 05:53:05        5.785533        0.398329
+BFGS:    4 05:53:05        5.779390        0.373658
+BFGS:    5 05:53:05        5.756110        0.708074
+BFGS:    6 05:53:05        5.745427        0.273236
+BFGS:    7 05:53:05        5.740948        0.305105
+BFGS:    8 05:53:05        5.680804        0.763961
+BFGS:    9 05:53:05        5.606658        1.168328
+BFGS:   10 05:53:05        5.613153        1.424417
+BFGS:   11 05:53:05        5.565165        1.057777
+BFGS:   12 05:53:05        5.531698        0.787569
+BFGS:   13 05:53:05        5.504276        0.421843
+BFGS:   14 05:53:05        5.486922        0.398052
+BFGS:   15 05:53:05        5.478353        0.290776
+BFGS:   16 05:53:05        5.474014        0.171718
+BFGS:   17 05:53:05        5.472711        0.102712
+BFGS:   18 05:53:05        5.472079        0.105381
+BFGS:   19 05:53:05        5.471296        0.120802
+BFGS:   20 05:53:05        5.470006        0.179588
+BFGS:   21 05:53:05        5.466797        0.291257
+BFGS:   22 05:53:05        5.455676        0.586799
+BFGS:   23 05:53:05        5.417864        1.134799
+BFGS:   24 05:53:05        5.280785        1.252849
+BFGS:   25 05:53:05        5.164537        0.847744
+BFGS:   26 05:53:05        5.158145        1.044813
+BFGS:   27 05:53:05        5.132735        0.730947
+BFGS:   28 05:53:05        5.124025        0.506933
+BFGS:   29 05:53:05        5.112816        0.604776
+BFGS:   30 05:53:05        5.074107        0.700310
+BFGS:   31 05:53:05        5.053900        0.339410
+BFGS:   32 05:53:05        5.044811        0.090509
+BFGS:   33 05:53:05        5.043997        0.009883
+      Step     Time          Energy          fmax
+BFGS:    0 05:53:05        6.154049        1.453296
+BFGS:    1 05:53:05        6.105189        1.251570
+BFGS:    2 05:53:05        6.041509        1.199695
+BFGS:    3 05:53:05        6.010999        0.301094
+BFGS:    4 05:53:05        6.004625        0.361808
+BFGS:    5 05:53:05        5.973098        0.755229
+BFGS:    6 05:53:05        5.941988        0.790034
+BFGS:    7 05:53:05        5.926583        0.409906
+BFGS:    8 05:53:05        5.919525        0.057874
+BFGS:    9 05:53:05        5.919418        0.013188

@@ -1,0 +1,3 @@
+Reactant energy: 5.91943651950046
+Product energy: 5.5092855118157615
+Transition state energy: 5.904908966065223

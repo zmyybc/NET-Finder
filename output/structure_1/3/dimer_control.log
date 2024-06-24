@@ -1,0 +1,131 @@
+MINMODE:METHOD: Dimer
+DIM:CONTROL: Search Parameters:
+DIM:CONTROL: ------------------
+DIM:CONTROL: eigenmode_method = dimer
+DIM:CONTROL: f_rot_min = 0.1
+DIM:CONTROL: f_rot_max = 1.0
+DIM:CONTROL: max_num_rot = 1
+DIM:CONTROL: trial_angle = 0.7853981633974483
+DIM:CONTROL: trial_trans_step = 0.001
+DIM:CONTROL: maximum_translation = 0.1
+DIM:CONTROL: cg_translation = True
+DIM:CONTROL: use_central_forces = True
+DIM:CONTROL: dimer_separation = 0.01
+DIM:CONTROL: initial_eigenmode_method = displacement
+DIM:CONTROL: extrapolate_forces = False
+DIM:CONTROL: displacement_method = gauss
+DIM:CONTROL: gauss_std = 0.1
+DIM:CONTROL: order = 1
+DIM:CONTROL: mask = None
+DIM:CONTROL: displacement_center = 0
+DIM:CONTROL: displacement_radius = 0.5
+DIM:CONTROL: number_of_displacement_atoms = None
+DIM:CONTROL: ------------------
+DIM:ROT: OPT-STEP ROT-STEP CURVATURE ROT-ANGLE ROT-FORCE
+MINMODE:DISP: Parameters, different from the control:
+MINMODE:DISP: mask = [True, False, False, False]
+MINMODE:DISP:       0      0.05535484      0.06567955      0.15962066
+MINMODE:DISP:       1      0.00000000      0.00000000      0.00000000
+MINMODE:DISP:       2      0.00000000      0.00000000      0.00000000
+MINMODE:DISP:       3      0.00000000      0.00000000      0.00000000
+DIM:ROT:       0         1    0.5783   15.3378    2.9196
+DIM:ROT:       1         1    0.5132    6.8032    0.6762
+DIM:ROT:       2         1    0.4035   11.8853    0.4833
+DIM:ROT:       3         1    0.3245    6.3445    1.0701
+DIM:ROT:       4         1   -0.0880   42.9396    0.4547
+DIM:ROT:       5         1   -0.3091   11.3724    1.0035
+DIM:ROT:       6         1   -0.7616   19.9860    1.0953
+DIM:ROT:       7         1   -0.8147   11.6159    1.7359
+DIM:ROT:       8         1    0.4224   16.2342    0.6302
+DIM:ROT:       9         1    0.3287    9.2408    1.3066
+DIM:ROT:      10         1    0.2842    6.6189    1.2114
+DIM:ROT:      11         1    0.1692    8.5478    0.8318
+DIM:ROT:      12         1    0.0789    3.1941    0.7350
+DIM:ROT:      13         1    0.0242    1.8690    0.5251
+DIM:ROT:      14         1   -0.0173    2.1332    0.2396
+DIM:ROT:      15         1   -0.0340    0.9768    0.2684
+DIM:ROT:      16         1    0.0425    1.7665    0.4539
+DIM:ROT:      17         1    0.0081    0.7177    0.2201
+DIM:ROT:      18         1   -0.0197    1.2910    0.1066
+DIM:ROT:      19         1   -0.0342    0.9426    0.1435
+DIM:ROT:      20         1    0.0447    1.2817    0.3889
+DIM:ROT:      21         1    0.0061    0.3914    0.1313
+DIM:ROT:      22         0   -0.0238 ---------    0.0955
+DIM:ROT:      23         1   -0.0304    1.2660    0.1268
+DIM:ROT:      24         1    0.0671    1.4913    0.3250
+DIM:ROT:      25         1    0.0239    0.7080    0.2623
+DIM:ROT:      26         0   -0.0084 ---------    0.0612
+DIM:ROT:      27         0   -0.0164 ---------    0.0798
+DIM:ROT:      28         1    0.0675    2.5521    0.2930
+DIM:ROT:      29         1    0.0316    1.1986    0.4236
+DIM:ROT:      30         0    0.0080 ---------    0.0649
+DIM:ROT:      31         1   -0.0128    1.0086    0.1025
+DIM:ROT:      32         1   -0.0149    0.4086    0.1064
+DIM:ROT:      33         1    0.0552    2.8532    0.2759
+DIM:ROT:      34         1    0.0282    1.2143    0.4212
+DIM:ROT:      35         0    0.0118 ---------    0.0702
+DIM:ROT:      36         0   -0.0018 ---------    0.0781
+DIM:ROT:      37         0   -0.0028 ---------    0.0838
+DIM:ROT:      38         1    0.0494    2.7141    0.3023
+DIM:ROT:      39         1    0.0295    1.2965    0.4278
+DIM:ROT:      40         1    0.0162    1.7524    0.1128
+DIM:ROT:      41         1    0.0086    0.5769    0.2141
+DIM:ROT:      42         0    0.0037 ---------    0.0224
+DIM:ROT:      43         0   -0.0006 ---------    0.0243
+DIM:ROT:      44         0   -0.0007 ---------    0.0306
+DIM:ROT:      45         1    0.0253    2.0026    0.2430
+DIM:ROT:      46         1    0.0167    0.9994    0.3066
+DIM:ROT:      47         1    0.0110    1.2737    0.1161
+DIM:ROT:      48         1    0.0076    0.5570    0.1869
+DIM:ROT:      49         0    0.0061 ---------    0.0601
+DIM:ROT:      50         0    0.0048 ---------    0.0507
+DIM:ROT:      51         0    0.0036 ---------    0.0458
+DIM:ROT:      52         0    0.0025 ---------    0.0461
+DIM:ROT:      53         0    0.0014 ---------    0.0509
+DIM:ROT:      54         0    0.0005 ---------    0.0589
+DIM:ROT:      55         0   -0.0003 ---------    0.0688
+DIM:ROT:      56         0   -0.0002 ---------    0.0748
+DIM:ROT:      57         1    0.0103    0.8348    0.1569
+DIM:ROT:      58         1    0.0077    0.5816    0.1418
+DIM:ROT:      59         0    0.0068 ---------    0.0953
+DIM:ROT:      60         0    0.0059 ---------    0.0893
+DIM:ROT:      61         0    0.0051 ---------    0.0856
+DIM:ROT:      62         0    0.0043 ---------    0.0841
+DIM:ROT:      63         0    0.0036 ---------    0.0849
+DIM:ROT:      64         0    0.0030 ---------    0.0876
+DIM:ROT:      65         0    0.0024 ---------    0.0921
+DIM:ROT:      66         0    0.0019 ---------    0.0979
+DIM:ROT:      67         1    0.0008    0.3657    0.1047
+DIM:ROT:      68         0    0.0002 ---------    0.0492
+DIM:ROT:      69         0   -0.0003 ---------    0.0536
+DIM:ROT:      70         0   -0.0003 ---------    0.0531
+DIM:ROT:      71         0    0.0083 ---------    0.0990
+DIM:ROT:      72         0    0.0073 ---------    0.0880
+DIM:ROT:      73         0    0.0063 ---------    0.0787
+DIM:ROT:      74         0    0.0054 ---------    0.0715
+DIM:ROT:      75         0    0.0046 ---------    0.0666
+DIM:ROT:      76         0    0.0038 ---------    0.0644
+DIM:ROT:      77         0    0.0031 ---------    0.0649
+DIM:ROT:      78         0    0.0024 ---------    0.0678
+DIM:ROT:      79         0    0.0018 ---------    0.0727
+DIM:ROT:      80         0    0.0013 ---------    0.0790
+DIM:ROT:      81         0    0.0008 ---------    0.0865
+DIM:ROT:      82         0    0.0003 ---------    0.0946
+DIM:ROT:      83         1   -0.0009    0.4499    0.1032
+DIM:ROT:      84         0   -0.0008 ---------    0.0596
+DIM:ROT:      85         0    0.0079 ---------    0.0916
+DIM:ROT:      86         0    0.0068 ---------    0.0791
+DIM:ROT:      87         0    0.0057 ---------    0.0678
+DIM:ROT:      88         0    0.0047 ---------    0.0581
+DIM:ROT:      89         0    0.0038 ---------    0.0502
+DIM:ROT:      90         0    0.0029 ---------    0.0449
+DIM:ROT:      91         0    0.0021 ---------    0.0426
+DIM:ROT:      92         0    0.0013 ---------    0.0437
+DIM:ROT:      93         0    0.0006 ---------    0.0476
+DIM:ROT:      94         0   -0.0000 ---------    0.0535
+DIM:ROT:      95         0    0.0001 ---------    0.0587
+DIM:ROT:      96         0   -0.0005 ---------    0.0661
+DIM:ROT:      97         0   -0.0004 ---------    0.0715
+DIM:ROT:      98         1    0.0080    0.6691    0.1414
+DIM:ROT:      99         1    0.0062    0.5181    0.1129
+DIM:ROT:     100         0    0.0055 ---------    0.0883

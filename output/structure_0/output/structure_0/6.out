@@ -1,0 +1,70 @@
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+      Step     Time          Energy          fmax
+BFGS:    0 05:53:05        5.370903        1.416481
+BFGS:    1 05:53:05        5.303539        1.259109
+BFGS:    2 05:53:05        5.169834        1.339378
+BFGS:    3 05:53:05        5.142077        0.815684
+BFGS:    4 05:53:05        5.105733        0.434445
+BFGS:    5 05:53:05        5.056958        0.210413
+BFGS:    6 05:53:05        5.047105        0.115507
+BFGS:    7 05:53:05        5.046131        0.102493
+BFGS:    8 05:53:05        5.045350        0.089811
+BFGS:    9 05:53:05        5.044691        0.087832
+BFGS:   10 05:53:05        5.044061        0.067121
+BFGS:   11 05:53:05        5.043716        0.036378
+      Step     Time          Energy          fmax
+BFGS:    0 05:53:05        5.260461        1.825428
+BFGS:    1 05:53:05        5.105987        1.470314
+BFGS:    2 05:53:05        4.941568        1.282410
+BFGS:    3 05:53:05        4.892455        0.412245
+BFGS:    4 05:53:05        4.886685        0.311990
+BFGS:    5 05:53:05        4.878105        0.380224
+BFGS:    6 05:53:05        4.864201        0.479846
+BFGS:    7 05:53:05        4.842736        0.790116
+BFGS:    8 05:53:05        4.817078        0.894837
+BFGS:    9 05:53:05        4.787065        0.662451
+BFGS:   10 05:53:05        4.765792        0.692222
+BFGS:   11 05:53:05        4.740831        0.649562
+BFGS:   12 05:53:05        4.717140        0.417063
+BFGS:   13 05:53:05        4.711908        0.343141
+BFGS:   14 05:53:05        4.707140        0.268092
+BFGS:   15 05:53:05        4.702373        0.241163
+BFGS:   16 05:53:05        4.692218        0.200440
+BFGS:   17 05:53:05        4.686538        0.182016
+BFGS:   18 05:53:05        4.684120        0.053133
+BFGS:   19 05:53:05        4.683913        0.010947

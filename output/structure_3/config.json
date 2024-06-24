@@ -1,0 +1,1 @@
+{"calculator_imports": "from ase.calculators.emt import EMT", "calculator_setup": "calc = EMT()", "dimer_params": {"displacement_method": "gauss", "displacement_radius": 0.5, "dimer_separation": 0.01}, "fmax": 0.05, "steps": 100}

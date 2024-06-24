@@ -1,0 +1,66 @@
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+      Step     Time          Energy          fmax
+BFGS:    0 05:53:05        5.670371        1.711756
+BFGS:    1 05:53:05        5.559997        1.567829
+BFGS:    2 05:53:05        5.408977        1.517767
+BFGS:    3 05:53:05        5.338167        0.680842
+BFGS:    4 05:53:05        5.325292        0.488591
+BFGS:    5 05:53:05        5.308554        0.524975
+BFGS:    6 05:53:05        5.293793        0.700689
+BFGS:    7 05:53:05        5.245184        1.019431
+BFGS:    8 05:53:05        5.175329        1.201614
+BFGS:    9 05:53:05        5.140771        0.740495
+BFGS:   10 05:53:05        5.105865        0.694197
+BFGS:   11 05:53:05        5.082364        0.611086
+BFGS:   12 05:53:05        5.064347        0.380160
+BFGS:   13 05:53:05        5.054824        0.393039
+BFGS:   14 05:53:05        5.047928        0.295368
+BFGS:   15 05:53:05        5.043555        0.163962
+BFGS:   16 05:53:05        5.041855        0.061423
+BFGS:   17 05:53:05        5.041591        0.017528
+      Step     Time          Energy          fmax
+BFGS:    0 05:53:05        5.910392        1.663967
+BFGS:    1 05:53:05        5.822603        1.578113
+BFGS:    2 05:53:05        5.697016        2.337091
+BFGS:    3 05:53:05        5.581240        0.814535
+BFGS:    4 05:53:05        5.558064        0.499741
+BFGS:    5 05:53:05        5.541410        0.388971
+BFGS:    6 05:53:05        5.534365        0.414495
+BFGS:    7 05:53:05        5.519855        0.360676
+BFGS:    8 05:53:05        5.514744        0.235800
+BFGS:    9 05:53:05        5.512423        0.134033
+BFGS:   10 05:53:05        5.511848        0.067951
+BFGS:   11 05:53:05        5.511631        0.032876

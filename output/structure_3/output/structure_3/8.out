@@ -1,0 +1,72 @@
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+<_io.TextIOWrapper name='/dev/null' mode='w' encoding='utf-8'>
+      Step     Time          Energy          fmax
+BFGS:    0 05:53:05        6.070354        1.179392
+BFGS:    1 05:53:05        6.014643        0.998149
+BFGS:    2 05:53:05        5.945831        0.729418
+BFGS:    3 05:53:05        5.920428        0.208856
+BFGS:    4 05:53:05        5.917786        0.180055
+BFGS:    5 05:53:05        5.915882        0.187325
+BFGS:    6 05:53:05        5.913243        0.165556
+BFGS:    7 05:53:05        5.911706        0.076295
+BFGS:    8 05:53:05        5.911413        0.023649
+      Step     Time          Energy          fmax
+BFGS:    0 05:53:05        5.837024        1.172387
+BFGS:    1 05:53:05        5.777926        0.978556
+BFGS:    2 05:53:05        5.699542        0.651265
+BFGS:    3 05:53:05        5.679972        0.390697
+BFGS:    4 05:53:05        5.674287        0.395537
+BFGS:    5 05:53:05        5.512985        1.050305
+BFGS:    6 05:53:05        5.470809        1.947590
+BFGS:    7 05:53:05        5.405720        0.943128
+BFGS:    8 05:53:05        5.389813        1.005513
+BFGS:    9 05:53:05        5.388226        1.428553
+BFGS:   10 05:53:05        5.362712        1.111048
+BFGS:   11 05:53:05        5.357219        1.130724
+BFGS:   12 05:53:05        5.346089        1.161132
+BFGS:   13 05:53:05        5.334345        1.096594
+BFGS:   14 05:53:05        5.257525        0.523852
+BFGS:   15 05:53:05        5.222207        0.259611
+BFGS:   16 05:53:05        5.216422        0.203674
+BFGS:   17 05:53:05        5.215325        0.166485
+BFGS:   18 05:53:05        5.214339        0.110352
+BFGS:   19 05:53:05        5.213836        0.080239
+BFGS:   20 05:53:05        5.213531        0.075769
+BFGS:   21 05:53:05        5.213189        0.089172
+BFGS:   22 05:53:05        5.211868        0.138503
+BFGS:   23 05:53:05        5.206266        0.320056
+BFGS:   24 05:53:05        5.183718        1.036543
+BFGS:   25 05:53:05        5.264906        1.931297
+BFGS:   26 05:53:05        5.159412        0.974275
+BFGS:   27 05:53:05        5.138503        0.873403
+BFGS:   28 05:53:05        5.129716        1.086385
+BFGS:   29 05:53:05        5.053336        0.177430
+BFGS:   30 05:53:05        5.044542        0.091616
+BFGS:   31 05:53:05        5.041853        0.045135

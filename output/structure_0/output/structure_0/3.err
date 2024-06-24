@@ -1,0 +1,13 @@
+
+Lmod is automatically replacing "gcc/11.2.0" with "intel/19.0.5.281".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) numactl/2.0.14     2) openmpi/4.0.6     3) zlib/1.2.11
+
+/anvil/scratch/x-wang3/yinbc/test_net/net_finder/search.py:25: FutureWarning: Please import DimerControl from ase.mep, not ase.dimer.
+  with DimerControl(
+/anvil/scratch/x-wang3/yinbc/test_net/net_finder/search.py:33: FutureWarning: Please import MinModeAtoms from ase.mep, not ase.dimer.
+  d_atoms = MinModeAtoms(self.atoms, d_control)
+/anvil/scratch/x-wang3/yinbc/test_net/net_finder/search.py:37: FutureWarning: Please import MinModeTranslate from ase.mep, not ase.dimer.
+  with MinModeTranslate(d_atoms, trajectory=dimer_traj_file, logfile= dimer_log_file) as dim_rlx:
